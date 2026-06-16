@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template, send_from_directory
+from flask import Flask, request, jsonify, render_template, send_from_directory, gunicorn
 from flask_cors import CORS
 import cv2
 import numpy as np
@@ -7,8 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 face_cascade = cv2.CascadeClassifier(
-    cv2.data.haarcascades +
-    "haarcascade_frontalface_default.xml"
+    cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
 )
 
 @app.route("/")
