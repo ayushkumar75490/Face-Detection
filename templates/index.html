@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>FaceVision AI</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<div class="dashboard">
+
+    <header>
+
+        <h1>FACEVISION AI</h1>
+
+        <div class="status">
+
+            <span class="pulse"></span>
+
+            Detection Active
+
+        </div>
+
+    </header>
+
+    <div class="main-grid">
+
+        <div class="camera-panel">
+
+        <div class="scanner"></div>
+
+        <video
+            id="video"
+            autoplay
+            muted
+            playsinline
+        ></video>
+
+        <canvas id="overlay"></canvas>
+
+        <div id="cameraMessage" class="camera-message"></div>
+        <button id="retryCameraBtn" class="retry-btn" type="button" style="display:none;">Retry Camera</button>
+
+        <button
+            id="snapshotBtn"
+            class="capture-btn"
+            disabled
+            onclick="captureSnapshot()"
+        >
+            Snapshot
+        </button>
+
+    </div>
+
+        <div class="analytics">
+
+            <div class="metric">
+
+                <h3>Faces</h3>
+
+                <h2 id="faceCount">0</h2>
+
+            </div>
+
+            <div class="metric">
+
+                <h3>FPS</h3>
+
+                <h2 id="fps">0</h2>
+
+            </div>
+
+            <div class="metric">
+
+                <h3>Status</h3>
+
+                <h2>ONLINE</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="bottom-grid">
+
+        <div class="face-info">
+
+            <h2>Face Analytics</h2>
+
+            <div id="faceInfo"></div>
+
+        </div>
+
+        <div class="logs">
+
+            <h2>AI Activity Log</h2>
+
+            <div id="logContainer"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/particles.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
