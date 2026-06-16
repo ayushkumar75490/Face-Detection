@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template, send_from_directory, gunicorn
+from flask import Flask, request, jsonify, render_template, send_from_directory
 from flask_cors import CORS
 import cv2
 import numpy as np
